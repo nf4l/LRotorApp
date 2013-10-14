@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1060" defaultVersion="1060" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="LRotor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" wantsToBeColor="NO" frameAutosaveName="RotorDCU" animationBehavior="default" id="21" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="467" y="424" width="193" height="97"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" autoresizesSubviews="NO" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="193" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField toolTip="3 digit heading" verticalHuggingPriority="750" id="196">
+                        <rect key="frame" x="47" y="37" width="37" height="23"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="220">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="200" id="272"/>
+                        </connections>
+                    </textField>
+                    <textField toolTip="3 digit heading" verticalHuggingPriority="750" tag="1" id="buK-c3-plO">
+                        <rect key="frame" x="47" y="7" width="37" height="23"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="7an-Mf-8M9">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="send:" target="200" id="b6B-yT-bmk"/>
+                            <outlet property="delegate" destination="200" id="HyP-wG-S0a"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="198">
+                        <rect key="frame" x="-1" y="43" width="43" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="DXCC:" id="222">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" red="0.99621332910000004" green="0.99621332910000004" blue="0.99621332910000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="lFn-0Z-uTI">
+                        <rect key="frame" x="5" y="7" width="37" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Sta:" id="h3T-r4-yqe">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" red="0.99621332910000004" green="0.99621332910000004" blue="0.99621332910000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </textFieldCell>
+                    </textField>
+                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" id="199">
+                        <rect key="frame" x="82" y="31" width="56" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Turn" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="223">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="send:" target="200" id="325"/>
+                        </connections>
+                    </button>
+                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" tag="2" id="Dha-v9-OHy">
+                        <rect key="frame" x="82" y="0.0" width="56" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Turn" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="hii-oR-vNF">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="send:" target="200" id="Qit-ss-EcE"/>
+                        </connections>
+                    </button>
+                    <button id="280">
+                        <rect key="frame" x="104" y="69" width="12" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="bevel" bezelStyle="circular" imagePosition="above" alignment="left" imageScaling="proportionallyDown" id="281">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="10" name="LucidaGrande"/>
+                            <connections>
+                                <binding destination="200" name="argument" keyPath="self.buttonLED3" id="283"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" tag="1" id="320">
+                        <rect key="frame" x="134" y="31" width="58" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="LP" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="321">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="Wingdings3"/>
+                            <connections>
+                                <action selector="send:" target="200" id="330"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" tag="3" id="Lcs-iS-dIb">
+                        <rect key="frame" x="134" y="2" width="58" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="LP" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kJa-N3-0hL">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="Wingdings3"/>
+                            <connections>
+                                <action selector="send:" target="200" id="ylX-ou-WC8"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <textField verticalHuggingPriority="750" id="322">
+                        <rect key="frame" x="17" y="69" width="78" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Connection" id="323">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+        </window>
+        <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+            <items>
+                <menuItem title="LRotor" id="56">
+                    <menu key="submenu" title="LRotor" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About LRotor" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Preferences..." keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="showPreferencePanel:" target="200" id="309"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Services" id="131"/>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide LRotor" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-2" id="152"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" id="145">
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-2" id="146"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-2" id="153"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit LRotor" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-2" id="139"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="390">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="391">
+                        <items>
+                            <menuItem isSeparatorItem="YES" id="395"/>
+                            <menuItem title="Close Window" keyEquivalent="w" id="396">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="407"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="19">
+                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="92">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="103">
+                    <menu key="submenu" title="Help" id="106">
+                        <items>
+                            <menuItem title="LRotor Help" keyEquivalent="?" id="111">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="122"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="200" userLabel="AppController" customClass="AppController">
+            <connections>
+                <outlet property="MyHdgLabel" destination="198" id="310"/>
+                <outlet property="buttonLED3" destination="280" id="290"/>
+                <outlet property="buttonLP" destination="320" id="334"/>
+                <outlet property="buttonLP2" destination="Lcs-iS-dIb" id="I3j-Wx-E5C"/>
+                <outlet property="buttonSend" destination="199" id="248"/>
+                <outlet property="buttonSend2" destination="Dha-v9-OHy" id="F5X-XF-aRI"/>
+                <outlet property="inputTextField" destination="196" id="sxE-eG-4dt"/>
+                <outlet property="inputTextField2" destination="buK-c3-plO" id="K5h-PF-sKo"/>
+                <outlet property="labelConnection" destination="322" id="333"/>
+                <outlet property="myWindow" destination="21" id="277"/>
+            </connections>
+        </customObject>
+        <userDefaultsController representsSharedInstance="YES" id="307"/>
+    </objects>
+</document>
