@@ -106,23 +106,6 @@
 	[self toggleOnTop];
 }
 
--(void)applicationDidFinishLaunching:(NSNotification *) notice
-{
-	/*
-	[[myWindow windowController] setShouldCascadeWindows:NO];
-	[myWindow setFrameAutosaveName:@"My Window"];
-	[myWindow makeKeyAndOrderFront:nil];
-	//[myWindow setOpaque:NO]; // YES by default
-	[myWindow setBackgroundColor:[PreferenceController preferenceBGColor]];
-	[MyHdgLabel setTextColor:[PreferenceController preferenceTxtColor]];
-	[labelConnection setTextColor:[PreferenceController preferenceTxtColor]];
-	if([CurrentBaud length] > 0 && [CurrentPort length] > 0)
-	{
-		[self initPort];
-	}
-	[self toggleOnTop];
-	 */
-}
 
 -(void)handleColorChange:(NSNotification *)note
 {
@@ -178,6 +161,10 @@
 	[inputTextField setEnabled:flag];
 	[buttonSend setEnabled:flag];
 	[buttonLP setEnabled:flag];
+}
+
+-(void)enableLine2:(BOOL)flag
+{
 	[inputTextField2 setEnabled:flag];
 	[buttonSend2 setEnabled:flag];
 	[buttonLP2 setEnabled:flag];
@@ -426,7 +413,8 @@
 	}
 }
 
-- (void)controlTextDidChange:(NSNotification *)notification {
+- (void)controlTextDidChange:(NSNotification *)notification
+{
 	// there was a text change in some control
 	int tmpInt = 0;
 	NSMutableString *tmp = [NSMutableString stringWithString:[inputTextField stringValue]];

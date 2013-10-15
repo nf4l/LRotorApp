@@ -64,7 +64,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <matrix verticalHuggingPriority="750" tag="3" selectionByRect="NO" autorecalculatesCellSize="YES" id="181">
-                                            <rect key="frame" x="11" y="17" width="234" height="102"/>
+                                            <rect key="frame" x="4" y="8" width="234" height="102"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             <size key="cellSize" width="114" height="18"/>

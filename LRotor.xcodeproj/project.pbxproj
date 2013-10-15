@@ -17,13 +17,13 @@
 		36BFDAE516972AB700DDCEFF /* A Compass That Doesn't Point North.icns in Resources */ = {isa = PBXBuildFile; fileRef = 36BFDAE416972AB700DDCEFF /* A Compass That Doesn't Point North.icns */; };
 		36D53B6116A5968300F0F86F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 36D53B6016A5968300F0F86F /* Credits.rtf */; };
 		36D53B6E16A86B8C00F0F86F /* LRotor.Help in Resources */ = {isa = PBXBuildFile; fileRef = 36D53B6D16A86B8C00F0F86F /* LRotor.Help */; };
+		36FBC390180D7CD800ED0F31 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FBC38E180D7CD800ED0F31 /* AppController.h */; };
+		36FBC391180D7CD800ED0F31 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FBC38F180D7CD800ED0F31 /* AppController.m */; };
 		E15800010C58DE2E00B8171B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E15800020C58DE2E00B8171B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B6E09E02D03CD90100010A /* IOKit.framework */; };
-		E158FFEC0C58DE2E00B8171B /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = F5B6E09402D03AB10100010A /* AppController.h */; };
 		E158FFF50C58DE2E00B8171B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		E158FFF60C58DE2E00B8171B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		E158FFF80C58DE2E00B8171B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		E158FFF90C58DE2E00B8171B /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E09502D03AB10100010A /* AppController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +44,9 @@
 		36BFDAE416972AB700DDCEFF /* A Compass That Doesn't Point North.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "A Compass That Doesn't Point North.icns"; sourceTree = "<group>"; };
 		36D53B6016A5968300F0F86F /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		36D53B6D16A86B8C00F0F86F /* LRotor.Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LRotor.Help; sourceTree = "<group>"; };
+		36FBC38E180D7CD800ED0F31 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		36FBC38F180D7CD800ED0F31 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		E15800080C58DE2F00B8171B /* LRotor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRotor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5B6E09402D03AB10100010A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
-		F5B6E09502D03AB10100010A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		F5B6E09E02D03CD90100010A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -72,8 +72,8 @@
 				369BDDCF1809E70700A70793 /* ORSSerialPortManager.m */,
 				36B1882116CD447600811033 /* PreferenceController.h */,
 				36B1882216CD447600811033 /* PreferenceController.m */,
-				F5B6E09402D03AB10100010A /* AppController.h */,
-				F5B6E09502D03AB10100010A /* AppController.m */,
+				36FBC38E180D7CD800ED0F31 /* AppController.h */,
+				36FBC38F180D7CD800ED0F31 /* AppController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			files = (
 				369BDDD21809E70700A70793 /* ORSSerialPortManager.h in Headers */,
 				369BDDD01809E70700A70793 /* ORSSerialPort.h in Headers */,
-				E158FFEC0C58DE2E00B8171B /* AppController.h in Headers */,
+				36FBC390180D7CD800ED0F31 /* AppController.h in Headers */,
 				36B1882416CD447600811033 /* PreferenceController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,9 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E158FFF80C58DE2E00B8171B /* main.m in Sources */,
-				E158FFF90C58DE2E00B8171B /* AppController.m in Sources */,
 				369BDDD31809E70700A70793 /* ORSSerialPortManager.m in Sources */,
 				36B1882516CD447600811033 /* PreferenceController.m in Sources */,
+				36FBC391180D7CD800ED0F31 /* AppController.m in Sources */,
 				369BDDD11809E70700A70793 /* ORSSerialPort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
