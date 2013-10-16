@@ -37,7 +37,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <outlet property="delegate" destination="200" id="HyP-wG-S0a"/>
+                            <outlet property="delegate" destination="200" id="iFp-yh-sYu"/>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" id="198">
@@ -121,17 +121,6 @@
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
-                    </textField>
-                    <textField toolTip="3 digit heading" verticalHuggingPriority="750" tag="1" id="2Hg-yP-tzk">
-                        <rect key="frame" x="47" y="9" width="37" height="23"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="WLE-wn-nKn">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="delegate" destination="200" id="M8O-G2-cNV"/>
-                        </connections>
                     </textField>
                 </subviews>
             </view>

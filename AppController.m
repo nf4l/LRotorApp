@@ -415,7 +415,7 @@
 
 - (void)controlTextDidChange:(NSNotification *)notification
 {
-	// there was a text change in some control
+	// there was a change in a text control
 	int tmpInt = 0;
 	NSMutableString *tmp = [NSMutableString stringWithString:[inputTextField stringValue]];
 	//NSLog(@"text box changed. value: %i", val);
@@ -441,6 +441,35 @@
 		//NSMutableString *strippedString = [NSMutableString stringWithCapacity:tmp.length];
 		[inputTextField setStringValue:@""];
 		[tmp setString:@""];		
+	}
+	///////////////
+	int tmpInt2 = 0;
+	NSMutableString *tmp2 = [NSMutableString stringWithString:[inputTextField2 stringValue]];
+	//NSLog(@"text box changed. value: %i", val);
+	if ([tmp2 length] > 3)
+	{
+		tmp2 = [NSMutableString stringWithString:[tmp2 substringToIndex:[tmp2 length] - 1]];
+		[inputTextField2 setStringValue:tmp2];
+	}
+	if ([tmp2 length] == 3)
+	{
+		tmpInt2 = [tmp2 intValue];
+		if (tmpInt2 > 360 || tmpInt2 < 0)
+		{
+			[self showAlert:@"Heading must be between 000 and 360"];
+			[inputTextField2 setStringValue:@""];
+			//[inputTextField2 setBackgroundColor:[NSColor yellowColor]];
+			[tmp2 setString:@""];
+		}
+		
+	}
+	if ([[inputTextField2 stringValue] rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
+	{
+		NSLog(@"This is not a positive integer");
+		//NSMutableString *strippedString = [NSMutableString stringWithCapacity:tmp.length];
+		[inputTextField2 setStringValue:@""];
+		//[[inputTextField2 cell] setBackgroundColor:[NSColor yellowColor]];
+		[tmp2 setString:@""];
 	}
 }
 
