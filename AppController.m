@@ -454,14 +454,13 @@
 	if ([tmp2 length] == 3)
 	{
 		tmpInt2 = [tmp2 intValue];
-		if (tmpInt2 > 360 || tmpInt2 < 0)
+		if (tmpInt2 > 360 || tmpInt2 < 0 || [tmp2 isEqualToString:@"0-1"])
 		{
-			[self showAlert:@"Heading must be between 000 and 360"];
+			//[self showAlert:@"Heading must be between 000 and 360"];
 			[inputTextField2 setStringValue:@""];
 			//[inputTextField2 setBackgroundColor:[NSColor yellowColor]];
 			[tmp2 setString:@""];
 		}
-		
 	}
 	if ([[inputTextField2 stringValue] rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
 	{
