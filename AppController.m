@@ -6,6 +6,7 @@
 
 #import "AppController.h"
 #import "PreferenceController.h"
+#import "HdgFormatter.h"
 
 @implementation AppController
 
@@ -13,7 +14,6 @@
 @synthesize CurrentBaud;
 @synthesize CurrentPort;
 @synthesize currentOnTopState;
-
 
 - (id)init
 {
@@ -443,32 +443,37 @@
 		[tmp setString:@""];		
 	}
 	///////////////
-	int tmpInt2 = 0;
-	NSMutableString *tmp2 = [NSMutableString stringWithString:[inputTextField2 stringValue]];
-	//NSLog(@"text box changed. value: %i", val);
-	if ([tmp2 length] > 3)
+	
+	//NSTextField *inputTextField = notification.object;   // get the field
+	//NSTextFieldCell *fieldCell = inputTextField.cell;    // and its cell - we use the placeholder text for feedback in this sample
+	
+	//fieldCell.placeholderString = @"Enter heading";      // user has typed, restore default message
+	
+	NSString *contents = inputTextField2.stringValue;     // an NSMutableString is not required, you never mutate this string
+	NSUInteger length = contents.length;
+	
+	if (length > 3)
 	{
-		tmp2 = [NSMutableString stringWithString:[tmp2 substringToIndex:[tmp2 length] - 1]];
-		[inputTextField2 setStringValue:tmp2];
+		// remove last character - did you mean to truncate to three characters?
+		inputTextField2.stringValue = [contents substringToIndex:length - 1];
 	}
-	if ([tmp2 length] == 3)
+	else if (length == 3)
 	{
-		tmpInt2 = [tmp2 intValue];
-		if (tmpInt2 > 360 || tmpInt2 < 0 || [tmp2 isEqualToString:@"0-1"])
+		int tmpInt = contents.intValue;
+		if (tmpInt > 360 || tmpInt < 0 || [contents isEqualToString:@"0-1"])
 		{
-			//[self showAlert:@"Heading must be between 000 and 360"];
-			[inputTextField2 setStringValue:@""];
-			//[inputTextField2 setBackgroundColor:[NSColor yellowColor]];
-			[tmp2 setString:@""];
+			//fieldCell.placeholderString = @"Heading must be between 000 and 360"; // inform user why field was blanked
+			inputTextField2.stringValue = @"";
 		}
 	}
-	if ([[inputTextField2 stringValue] rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
+	else if ([contents rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
 	{
-		NSLog(@"This is not a positive integer");
-		//NSMutableString *strippedString = [NSMutableString stringWithCapacity:tmp.length];
-		[inputTextField2 setStringValue:@""];
-		//[[inputTextField2 cell] setBackgroundColor:[NSColor yellowColor]];
-		[tmp2 setString:@""];
+		// you might want different logic here
+		// if a user types "12Y" you delete everything, deleting just the "Y" might be more friendly
+		// ("Y" picked as an example as it could be a miss hit for the 6 or 7 keys)
+		
+		//fieldCell.placeholderString = @"Enter a positive integer"; // inform user why field was blanked
+		inputTextField2.stringValue = @"";
 	}
 }
 

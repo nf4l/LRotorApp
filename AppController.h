@@ -30,6 +30,7 @@
 @property (nonatomic, retain) NSString *CurrentBaud;
 @property (nonatomic) NSInteger currentOnTopState;
 
+
 - (IBAction)showPreferencePanel:(id)sender;
 - (IBAction)send:(id)sender;
 
