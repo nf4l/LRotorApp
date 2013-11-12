@@ -417,64 +417,54 @@
 {
 	// there was a change in a text control
 	int tmpInt = 0;
-	NSMutableString *tmp = [NSMutableString stringWithString:[inputTextField stringValue]];
-	//NSLog(@"text box changed. value: %i", val);
-	if ([tmp length] > 3)
+	
+	NSString *tmp = inputTextField.stringValue;
+	NSString *tmp2 = inputTextField2.stringValue;
+
+	if (tmp.length > 3)
 	{
-		tmp = [NSMutableString stringWithString:[tmp substringToIndex:[tmp length] - 1]];
-		[inputTextField setStringValue:tmp];
+		inputTextField.stringValue = [tmp substringToIndex:tmp.length - 1];
 	}
-	if ([tmp length] == 3)
+	
+	if (tmp.length == 3)
 	{
 		tmpInt = [tmp intValue];
 		if (tmpInt > 360 || tmpInt < 0)
 		{
 			[self showAlert:@"Heading must be between 000 and 360"];
-			[inputTextField setStringValue:@""];
-			[tmp setString:@""];
+			inputTextField.stringValue = @"";
 		}
-		
 	}
 	if ([[inputTextField stringValue] rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
 	{
 		NSLog(@"This is not a positive integer");
-		//NSMutableString *strippedString = [NSMutableString stringWithCapacity:tmp.length];
-		[inputTextField setStringValue:@""];
-		[tmp setString:@""];		
+		inputTextField.stringValue = @"";
 	}
-	///////////////
-	
-	//NSTextField *inputTextField = notification.object;   // get the field
-	//NSTextFieldCell *fieldCell = inputTextField.cell;    // and its cell - we use the placeholder text for feedback in this sample
-	
-	//fieldCell.placeholderString = @"Enter heading";      // user has typed, restore default message
-	
-	NSString *contents = inputTextField2.stringValue;     // an NSMutableString is not required, you never mutate this string
-	NSUInteger length = contents.length;
-	
-	if (length > 3)
+		
+	if (tmp2.length > 3)
 	{
-		// remove last character - did you mean to truncate to three characters?
-		inputTextField2.stringValue = [contents substringToIndex:length - 1];
+		inputTextField2.stringValue = [tmp2 substringToIndex:tmp2.length - 1];
 	}
-	else if (length == 3)
+	else if (tmp2.length == 3)
 	{
-		int tmpInt = contents.intValue;
-		if (tmpInt > 360 || tmpInt < 0 || [contents isEqualToString:@"0-1"])
+		int tmpInt = tmp2.intValue;
+		if (tmpInt > 360 || tmpInt < 0)
 		{
 			//fieldCell.placeholderString = @"Heading must be between 000 and 360"; // inform user why field was blanked
 			inputTextField2.stringValue = @"";
 		}
 	}
-	else if ([contents rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
+	else if ([tmp2 rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
 	{
-		// you might want different logic here
-		// if a user types "12Y" you delete everything, deleting just the "Y" might be more friendly
-		// ("Y" picked as an example as it could be a miss hit for the 6 or 7 keys)
-		
 		//fieldCell.placeholderString = @"Enter a positive integer"; // inform user why field was blanked
 		inputTextField2.stringValue = @"";
 	}
+	if ([tmp2 isEqualToString:@"0-1"])
+	{
+		inputTextField2.stringValue = @"";
+	}
+	NSLog(@"Field2 = %@", tmp2);
+	NSLog(@"len = %lu", tmp2.length);
 }
 
 - (void)getSettings
